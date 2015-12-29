@@ -14,6 +14,16 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('code');
+            $table->date('date');
+            $table->double('subtotal');
+            $table->integer('disc');
+            $table->double('price_disc');
+            $table->double('total');
+            $table->double('payment');
+            $table->double('changes');
+            $table->boolean('isdel');
+            $table->unsignedInteger('user_id')->index();
             $table->timestamps();
         });
     }

@@ -14,6 +14,11 @@ class CreateSalesDetailsTable extends Migration
     {
         Schema::create('sales_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('sales_id')->index();
+            $table->unsignedInteger('items_id')->index();
+            $table->integer('qty');
+            $table->double('price_disc');
+            $table->double('subtotal');
             $table->timestamps();
         });
     }
