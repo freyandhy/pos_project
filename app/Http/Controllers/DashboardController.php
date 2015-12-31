@@ -11,6 +11,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-    	return view('app');
+		$data['page_title'] = 'Dashboard';
+		$data['page_desc']  = 'Control Panel';
+    	return view('dashboard',$data);
     }
 }
